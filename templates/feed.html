@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <title>LoL feed</title>
+        <link rel="stylesheet" href="{{ STATIC_URL }}neo_core/css/bootstrap.css"/>
+{#        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>#}
+        <script type="text/javascript" src="{{ STATIC_URL }}neo_core/js/bootstrap.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+            <h1>#League_of_Legends</h1>
+                    {% for feed_item in feed_list %}
+                <div class="span5" style="margin-top: 25px">
+                        {% if feed_item.header %}
+                            <h4>{{ feed_item.header|safe }}</h4>
+                        {% endif %}
+                        {% if feed_item.message %}
+                            <p>{{ feed_item.message|safe }}</p>
+                        {% endif %}
+                        {% if feed_item.link %}
+                            <a href='{{ feed_item.link|safe }}'>{{ feed_item.link|safe|truncatechars:50 }}</a>
+                        {% endif %}
+                            <p style="margin-top: 15px">Likes: {{ feed_item.like_count|safe }} / Reposts: {{ feed_item.repost_count|safe }}</p>
+                        {% if feed_item.author_id %}
+                            <p>from: {{ feed_item.author_id|safe }}</p>
+                        {% endif %}
+                </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

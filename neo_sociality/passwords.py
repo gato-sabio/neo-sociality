@@ -1,0 +1,4 @@
+DB_USER = 'andrewparfenov'
+DB_PASS = 'asser1234'
+FB_APP_ID = '365150956945400'
+FB_APP_SECRET = 'e9032304a9bd7d0f407fae0af52743c8'
