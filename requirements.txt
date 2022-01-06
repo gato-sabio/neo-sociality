@@ -4,7 +4,7 @@ amqp==1.0.12
 anyjson==0.3.3
 billiard==2.7.3.31
 bunch==1.0.1
-celery==3.0.21
+celery==5.2.2
 celery-with-redis==3.0
 distribute==0.7.3
 django-annoying==0.7.7
